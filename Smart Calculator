@@ -1,0 +1,55 @@
+class SmartCalculator:
+    def __init__(self):
+        self.calculation = ''
+
+    def add(self, number):
+        self.calculation += str(number) + '+'
+        return self
+
+    def subtract(self, number):
+        self.calculation += str(number) + '-'
+        return self
+
+    def multiply(self, number):
+        self.calculation += str(number) + '*'
+        return self
+
+    def divide(self, number):
+        self.calculation += str(number) + '/'
+        return self
+
+    def power(self, number):
+        self.calculation += str(number) + '^'
+        return self
+
+    def modulus(self, number):
+        self.calculation += str(number) + '%'
+        return self
+
+    def root(self, number):
+        self.calculation += 'sqrt(' + str(number) + ')'
+        return self
+
+    def clear(self):
+        self.calculation = ''
+
+    def calculate(self):
+        try:
+            return eval(self.calculation)
+        except:
+            return "Error in calculation"
+
+    def get_calculation(self):
+        return self.calculation
+
+calc = SmartCalculator()
+
+calc.add(10).subtract(5).multiply(3).divide(4).power(2).modulus(5).root(16)
+print(calc.calculate())
+print(calc.get_calculation())
+
+calc.clear()
+
+calc.add(5).subtract(10).multiply(3).divide(2).power(3).modulus(5).root(10)
+print(calc.calculate())
+print(calc.get_calculation())
